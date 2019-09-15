@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+관리자모드
+{% endblock %}
+
+{% block body %}
+<h1>관리자모드-도메인정보</h1>
+<table>
+    <tr>
+        <th>
+            도메인
+        </th>
+        <th>
+            수
+        </th>
+    </tr>
+    {% for item in stu_data %}
+    <tr>
+        {% for items in item %}
+        <td>{{ items }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<ul>
+    <li>
+        <a href = "/admin">처음으로</a>
+    </li>
+</ul>
+
+{% endblock %}

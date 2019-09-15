@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+학생모드
+{% endblock %}
+
+{% block body %}
+<h1>{{ name }}님의 개인 연락처추가</h1>
+<form action="/{{ name }}/pappend" method='POST'>
+    <input type='text' name='info' placeholder='name, number, email, rank'>
+    <input type='submit' value='register'>
+</form>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type ='file' name = 'file'>
+    <input type = "submit" value='upload'>
+</form>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+관리자모드
+{% endblock %}
+
+{% block body %}
+<h1>관리자모드-주소록정보</h1>
+<form action="/contact/name" method='POST'>
+    <input type='text' name='id' placeholder='이름 검색'>
+    <input type='submit' value='search'>
+</form>
+<table>
+    <tr>
+        <th>
+            학번
+        </th>
+        <th>
+            전화번호
+        </th>
+        <th>
+            이메일
+        </th>
+    </tr>
+    {% for item in stu_data %}
+    <tr>
+        <td><a href="/{{ item[0] }}/contact">{{ item[0] }}</a></td>
+        {% for items in item %}
+        {% if items != item[0] %}
+        <td>{{ items }}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+<ul>
+    <li>
+        <a href = "/admin">처음으로</a>
+    </li>
+</ul>
+
+{% endblock %}

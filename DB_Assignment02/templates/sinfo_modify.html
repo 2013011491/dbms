@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+관리자모드
+{% endblock %}
+
+{% block body %}
+<h1>관리자모드-{{ stu_data[2] }} 학생 정보수정</h1>
+<table>
+    <tr>
+        <th>
+            학번
+        </th>
+        <th>
+            비밀번호
+        </th>
+        <th>
+            이름
+        </th>
+        <th>
+            성별
+        </th>
+        <th>
+            전공
+        </th>
+        <th>
+            지도교수
+        </th>
+        <th>
+            학년
+        </th>
+    </tr>
+    <tr>
+        <form action="/{{ stu_data[0] }}/complete" method='POST'>
+            <td>{{ stu_data[0] }}</td>
+            <td><input type='text' name='passwd' value="{{ stu_data[1] }}"></td>
+            <td><input type='text' name='sname'  value="{{ stu_data[2] }}"></td>
+            <td><input type='text' name='sex' value="{{ stu_data[3] }}"></td>
+            <td><input type='text' name='mid' value="{{ stu_data[4] }}"></td>
+            <td><input type='text' name='tid' value="{{ stu_data[5] }}"></td>
+            <td><input type='text' name='grade' value="{{ stu_data[6] }}"></td>
+            <input type='submit' name='modi' value='수정'>
+            <input type='submit' name='del' value='삭제'>
+            <input type='submit' name='cancel' value='취소'>
+        </form>
+    </tr>
+</table>
+<h2>{{ stu_data[2] }} 학생 개인 주소록 정보</h2>
+<table>
+    <tr>
+        <th>
+            이름
+        </th>
+        <th>
+            전화번호
+        </th>
+        <th>
+            이메일
+        </th>
+        <th>
+            직급
+        </th>
+    </tr>
+    {% for item in stu_data1 %}
+    <tr>
+        {% for items in item %}
+        <td>{{ items }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

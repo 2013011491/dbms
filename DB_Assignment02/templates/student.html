@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+학생모드
+{% endblock %}
+
+{% block body %}
+<h1> 환영합니다. {{ id }}님!</h1>
+<ul>
+    <li>
+        <a href="/private">개인 정보</a>
+    </li>
+    <li>
+        <a href="/sending">메일 보내기</a>
+    </li>
+    <li>
+        <a href="/s_contacts">주소록 관리</a>
+    </li>
+</ul>
+{% endblock %}

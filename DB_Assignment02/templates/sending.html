@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+학생모드
+{% endblock %}
+
+{% block body %}
+<h1>공용주소록 정보</h1>
+<table>
+    <tr>
+        <th>
+            학번
+        </th>
+        <th>
+            전화번호
+        </th>
+        <th>
+            이메일
+        </th>
+    </tr>
+    {% for item in stu_data %}
+    <tr>
+        {% for items in item %}
+        <td>{{ items }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+
+<h2>내 주소록 정보</h2>
+<table>
+    <tr>
+        <th>
+            이름
+        </th>
+        <th>
+            전화번호
+        </th>
+        <th>
+            이메일
+        </th>
+        <th>
+            직급
+        </th>
+    </tr>
+    {% for item in stu_data1 %}
+    <tr>
+        {% for items in item %}
+        <td>{{ items }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+<ul>
+    <li>
+        <a href = "/student">처음으로</a>
+    </li>
+</ul>
+
+{% endblock %}

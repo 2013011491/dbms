@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+관리자모드
+{% endblock %}
+
+{% block body %}
+<h1>관리자모드 - 연락처추가</h1>
+<form action="/admin/cappend" method='POST'>
+    <input type='text' name='info' placeholder='sid, phoneNumber, email'>
+    <input type='submit' value='register'>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+학생모드
+{% endblock %}
+
+{% block body %}
+<h1>{{ session['id'] }}의 {{ stu_data[1] }} 정보수정</h1>
+<table>
+        <tr>
+            <th>
+                이름
+            </th>
+            <th>
+                전화번호
+            </th>
+            <th>
+                이메일
+            </th>
+            <th>
+                직급
+            </th>
+        </tr>
+    <tr>
+        <form action="/{{ stu_data[1] }}/pmodicomple" method='POST'>
+            <td><input type='text' name='name' value="{{ stu_data[0] }}"></td>
+            <td>{{ stu_data[1] }}</td>
+            <td><input type='text' name='email'  value="{{ stu_data[2] }}"></td>
+            <td><input type='text' name='rank'  value="{{ stu_data[3] }}"></td>
+            <input type='submit' name='modi' value='수정'>
+            <input type='submit' name='del' value='삭제'>
+            <input type='submit' name='cancel' value='취소'>
+        </form>
+</tr>
+</table>
+{% endblock %}

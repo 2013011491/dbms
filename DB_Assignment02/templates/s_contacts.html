@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+학생모드
+{% endblock %}
+
+{% block body %}
+<h1>내 주소록 정보</h1>
+<form action="/pappend" method='POST'>
+    <input type='submit' name='appen' value='추가'>
+</form>
+<table>
+    <tr>
+        <th>
+            이름
+        </th>
+        <th>
+            전화번호
+        </th>
+        <th>
+            이메일
+        </th>
+        <th>
+            직급
+        </th>
+    </tr>
+    {% for item in stu_data %}
+    <tr>
+        {% for items in item %}
+        {% if items != item[1] %}
+        <td>{{ items }}</td>
+        {% endif %}
+        {% if items == item[1] %}
+        <td><a href="/{{ item[1] }}/privmodi">{{ item[1] }}</a></td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+<ul>
+    <li>
+        <a href = "/student">처음으로</a>
+    </li>
+</ul>
+
+{% endblock %}

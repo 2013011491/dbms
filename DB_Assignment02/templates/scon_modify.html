@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+관리자모드
+{% endblock %}
+
+{% block body %}
+<h1>관리자모드-{{ sname }} 주소록 정보수정</h1>
+<table>
+        <tr>
+            <th>
+                학번
+            </th>
+            <th>
+                전화번호
+            </th>
+            <th>
+                이메일
+            </th>
+        </tr>
+    <tr>
+        <form action="/{{ stu_data[0] }}/cmodicomple" method='POST'>
+            <td>{{ stu_data[0] }}</td>
+            <td><input type='text' name='phone' value="{{ stu_data[1] }}"></td>
+            <td><input type='text' name='email'  value="{{ stu_data[2] }}"></td>
+            <input type='submit' name='modi' value='수정'>
+            <input type='submit' name='del' value='삭제'>
+            <input type='submit' name='cancel' value='취소'>
+        </form>
+</tr>
+</table>
+{% endblock %}

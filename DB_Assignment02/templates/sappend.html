@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+관리자모드
+{% endblock %}
+
+{% block body %}
+<h1>관리자모드-학생정보추가</h1>
+<form action="/admin/append" method='POST'>
+    <input type='text' name='info' placeholder='sid, password, sname, sex, major_id, tutor_id, grade'>
+    <input type='submit' value='register'>
+</form>
+{% endblock %}

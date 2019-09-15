@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+학생모드
+{% endblock %}
+
+{% block body %}
+<h1>내 정보</h1>
+
+<table>
+    <tr>
+        <th>
+            학번
+        </th>
+        <th>
+            비밀번호
+        </th>
+        <th>
+            성별
+        </th>
+        <th>
+            전공
+        </th>
+        <th>
+            지도교수
+        </th>
+        <th>
+            학년
+        </th>
+    </tr>
+    <tr>
+        {% for item in stu_data %}
+        {% if item != stu_data[2] %}
+        <td>{{ item }}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+
+</table>
+<ul>
+    <li>
+        <a href = "/student">처음으로</a>
+    </li>
+</ul>
+
+{% endblock %}

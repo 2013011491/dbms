@@ -1,0 +1,10 @@
+1. SELECT * FROM Building WHERE rooms>=20
+2. INSERT INTO Student VALUES('2013011491', '0000', '안찬영', 'male', 3, '2009003125', 3)
+3. UPDATE Building SET name='정보통신관' WHERE name='IT/BT'
+4. SELECT B.building_id, B.name FROM Building B, Room R WHERE R.capacity >= 100 AND B.building_id=R.building_id
+5. SELECT Simple.major 
+   FROM (SELECT substr(course_id,1,3) AS major 
+	FROM Course) AS Simple
+   GROUP BY major
+   ORDER BY count(*) DESC
+   LIMIT 10
